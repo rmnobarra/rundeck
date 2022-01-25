@@ -11,7 +11,6 @@ apt-get install -y rundeck rundeck-cli
 
 # Rundeck configs
 
-sed -i s/admin:admin/g /etc/rundeck/realm.properties
 sed -i s/localhost/172.27.11.10/g /etc/rundeck/framework.properties
 sed -i s/localhost/172.27.11.10/g /etc/rundeck/rundeck-config.properties
 
@@ -20,5 +19,4 @@ systemctl restart rundeckd
 
 # Clone do repo
 
-ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts
-git clone git@github.com:rmnobarra/rundeck.git
+git clone https://github.com/rmnobarra/rundeck.git
