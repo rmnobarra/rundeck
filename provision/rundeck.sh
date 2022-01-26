@@ -19,4 +19,4 @@ systemctl restart rundeckd
 
 # Clone do repo
 
-git clone https://github.com/rmnobarra/rundeck.git
+sudo -u sysadmin -s /bin/bash -c 'sudo git clone https://github.com/rmnobarra/rundeck.git'

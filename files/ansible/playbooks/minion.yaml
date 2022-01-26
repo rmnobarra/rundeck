@@ -3,25 +3,30 @@
   vars:
     user: lighttpd
     group: lighttpd
+
   tasks:
   - name: Verificando distribuição
     set_fact:
       user: www-data
       group: www-data
     when: ansible_distribution|lower == 'debian'
+
   - name: Garantindo o epel-release em CentOS
     package:
       name: epel-release
       state: present
     when: ansible_distribution|lower == 'centos'
+
   - name: Desabilitando o SELinux em CentOS
     selinux:
       state: disabled
     when: ansible_distribution|lower == 'centos'
+
   - name: Garantindo Lighttpd
     package:
       name: lighttpd
       state: present
+
   - name: Garantindo configurações
     template:
       src: '{{ item }}'
@@ -30,6 +35,7 @@
     loop:
     - lighttpd.conf
     - mime-types.conf
+
   - name: Garantindo diretórios
     file:
       path: '{{ item }}'
@@ -40,6 +46,7 @@
     - /srv/www/html
     - /var/cache/lighttpd
     - /var/logs/lighttpd
+
   - name: Garantindo configurações de proxy
     blockinfile:
       path: /etc/lighttpd/proxy.conf
@@ -48,11 +55,13 @@
         $SERVER["socket"] == ":8080" {
             proxy.server = ( "" => ( ( "host" => "192.168.10.10", "port" => "80" )))
         }
+
   - name: Garantindo serviço do Lighttpd
     service:
       name: lighttpd
       state: restarted
       enabled: yes
+      
   - name: Testando conexão com load balancer
     uri:
       url: http://172.27.11.20
