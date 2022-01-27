@@ -64,6 +64,10 @@ marcar Use become privilege escalation.
 
 Privilege escalation method: sudo
 
+Ainda em configurações de projeto, vá em "editar configuração" > Default executor de Nó e altere o valor:
+
+SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
+
 A partir daqui, o esperado é que exista 3 nós no projeto: Rundeck, Minion e Docker.
 
 8. Crie uma nova tarefa chamada minion, em workflow, selecione Ansible Playbook Workflow Node Step e adicione
