@@ -21,7 +21,6 @@ services:
     ports:
       - 9090:9090
     links:
-      - cadvisor:cadvisor
       - alertmanager:alertmanager
     restart: always
 

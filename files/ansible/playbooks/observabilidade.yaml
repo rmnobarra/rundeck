@@ -9,9 +9,7 @@
       dest: /home/sysadmin/rundeck
       update: yes
 
-  - name: deploy Docker Compose stack
-    become_user: root
-    docker_compose:
-      project_src: /home/sysadmin/rundeck/files/compose
-      files:
-      - docker-compose.yml
+  - name: Deploy Docker Compose stack
+    shell:
+      cmd: "docker-compose up -d"
+      chdir: /home/sysadmin/rundeck/files/compose
