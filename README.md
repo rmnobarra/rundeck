@@ -11,14 +11,30 @@ O Rundeck é divido basicamente em:
 Projects: Que consiste de uma coleção de jobs e node sources. Em resumo, uma forma de
 organizar seu ambiente, que pode ser Projects por cliente, tipo de ambiente (dev, hmg,pre), tecnologias (projetos ansible, projeto terraform) e por ai.
 
+Node Sources: Os hosts que o Rundeck irá gerenciar (incluindo ele mesmo)
 
+Jobs: É o que você deseja executar.
+
+Em um job você encontra:
+
+Workflow: Um ou mais passo dentro um job
+
+Options: Serve para o  usuário do job inserir algum dado, responder pergunta, etc.
+
+Nodes: O destino, alvo, host  que executará o job.
+
+Schedule: O agendamento deste job.
+
+Notifications: Envia uma notificação em cada situação do job, executado com sucesso, com falha, ao iniciar, ao terminar. Tem diversos plugins, integrando como por exemplo
+por email, slack e telegram.
+
+O rundeck ainda conta com uma ferramanta chamada "Comandos" que serve para executar comandos remotamente em qualquer nó em seu projeto e também a opção de disponibilizar determinado job ou log via webhook.
 
 O propósito desse lab é exercitar algumas situações da vida real, onde teremos um servidor Rundeck orientado a webhooks e utilizando como fonte da verdade, um repositório git.
 
-*Existe chaves ssh neste repositório, caso leve a prod, PELO AMOR DE DEUS, não commite chaves, senhas, etc. Isto aqui é um lab*
+*Existe chaves ssh neste repositório, caso leve a prod, PELO AMOR DE DEUS, não commite chaves, senhas, etc. Isto aqui é um LAB*
 
-Para executar esse lab é necessário ter o Vagrant / Virtualbox instalado.
-
+### OBS: Para executar esse lab é necessário ter o Vagrant / Virtualbox instalado.
 
 ## Como usar?
 
