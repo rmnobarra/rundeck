@@ -1,0 +1,16 @@
+- hosts: rundeck
+
+  become: yes
+
+  tasks:
+
+  - name: Obtendo binário terraform
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_amd64.zip
+      dest: /usr/local/bin
+      remote_src: yes
+
+  - name: Deploy projeto terraform
+    terraform:
+      project_path: /home/sysadmin/files/terraform/
+      state: present

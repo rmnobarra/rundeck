@@ -30,7 +30,14 @@ por email, slack e telegram.
 
 O rundeck ainda conta com uma ferramenta chamada "Comandos" que serve para executar comandos remotamente em qualquer nó em seu projeto e também a opção de disponibilizar determinado job ou log via webhook.
 
-O propósito desse lab é exercitar algumas situações da vida real, onde teremos um servidor Rundeck orientado a webhooks e utilizando como fonte da verdade, um repositório git.
+O propósito desse lab é exercitar algumas situações da vida real, onde teremos um servidor Rundeck orientado a webhooks e utilizando como fonte da verdade, um repositório git. Este projeto irá configurar:
+
+* Checkout de repositórios
+* Execução de playbooks ansible para:
+    * instalar docker / docker compose
+    * instalar nginx
+    * Executar containeres
+    * Executar projeto terraform
 
 *Existe chaves ssh neste repositório, caso leve a prod, PELO AMOR DE DEUS, não commite chaves, senhas, etc. Isto aqui é um LAB*
 
@@ -223,6 +230,11 @@ Na aba do rundeck, marque "Auto refresh"
 22. Espere o alertmanager enviar o POST para o rundeck executar a tarefa minion.
 
 23. Verifique se o serviço do nginx voltou a funcionar.
+
+25. Crie um job chamado terraform-github
+
+terraform apply --auto-approve -var-file=terraform.tfvars
+
 
 24. Para finalizar o lab:
 
