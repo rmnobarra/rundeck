@@ -10,6 +10,7 @@
       update: yes
 
   - name: deploy Docker Compose stack
+    become_user: root
     docker_compose:
       project_src: /home/sysadmin/rundeck/files/compose
       files:
