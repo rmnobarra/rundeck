@@ -34,7 +34,6 @@ services:
     command:
       - '-config.file=/etc/alertmanager/config.yml'
       - '-storage.path=/alertmanager'
-
   grafana:
     image: grafana/grafana:5.4.2
     depends_on:

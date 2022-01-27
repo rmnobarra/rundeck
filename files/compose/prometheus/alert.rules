@@ -22,7 +22,7 @@ groups:
 
   - alert: site_down
     expr: probe_success < 1
-    for: 30s
+    for: 5s
     labels:
       severity: page
     annotations:
