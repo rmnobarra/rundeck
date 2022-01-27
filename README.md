@@ -1,5 +1,18 @@
 # Rundeck
 
+O Rundeck é um software muito eficiente que pode nos ajudar em agendamentos de tasks, atividades de automação, execução de jobs dos mais variadostipos, Automação de CD (Continuous Delivery) e muito mais.
+
+Existem duas versões do Rundeck, a Community e Enterprise, onde há diferenças razoáveis entre as duas versões. 
+
+As diferenças entre community e enterprise você encontra um bom resumo [aqui](https://www.rundeck.com/community-vs-enterprise).
+
+O Rundeck é divido basicamente em:
+
+Projects: Que consiste de uma coleção de jobs e node sources. Em resumo, uma forma de
+organizar seu ambiente, que pode ser Projects por cliente, tipo de ambiente (dev, hmg,pre), tecnologias (projetos ansible, projeto terraform) e por ai.
+
+
+
 O propósito desse lab é exercitar algumas situações da vida real, onde teremos um servidor Rundeck orientado a webhooks e utilizando como fonte da verdade, um repositório git.
 
 *Existe chaves ssh neste repositório, caso leve a prod, PELO AMOR DE DEUS, não commite chaves, senhas, etc. Isto aqui é um lab*
@@ -44,8 +57,9 @@ Neste momento temos esse repositório dentro do home do usuário sysadmin no ser
 
 6. Em configurações de projeto, vá em "editar nós"
 
-7. Adicione Ansible Resource Model Source em "Add a New Node Source", com as seguintes configurações
+7. Na opção Ansible Resource Model Source em "Add a New Node Source", configures os seguintes parâmetros:
 
+```
 ansible inventory File path: /home/sysadmin/rundeck/files/ansible/inventory
 
 Ansible config file path: /home/sysadmin/rundeck/files/ansible
