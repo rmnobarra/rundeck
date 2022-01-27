@@ -20,3 +20,5 @@ mkdir -p /home/sysadmin/.ssh
 cp /vagrant/files/id_rsa* /home/sysadmin/.ssh
 chmod 400 /home/sysadmin/.ssh/id_rsa* && chown -R sysadmin:sysadmin /home/sysadmin/.ssh/*
 cp /vagrant/files/id_rsa.pub /home/sysadmin/.ssh/authorized_keys
+
+

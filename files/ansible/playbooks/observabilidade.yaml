@@ -1,16 +1,16 @@
-- hosts: balancer
+- hosts: docker
   become: yes
+
   tasks:
-  - name: Garantindo o HAProxy
-    package:
-      name: haproxy
-      state: present
-  - name: Garantindo a configuração
-    copy:
-      src: haproxy.cfg
-      dest: /etc/haproxy/
-  - name: Garantindo o serviço HAProxy
-    service:
-      name: haproxy
-      state: restarted
-      enabled: yes
+
+  - name: Clone do repo
+    ansible.builtin.git:
+      repo: 'https://github.com/rmnobarra/rundeck.git'
+      dest: /home/sysadmin/rundeck
+      update: yes
+
+  - name: deploy Docker Compose stack
+    docker_compose:
+      project_src: /home/sysadmin/rundeck/files/compose
+      files:
+      - docker-compose.yml

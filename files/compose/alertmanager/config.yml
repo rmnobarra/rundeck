@@ -1,0 +1,7 @@
+route:
+    receiver: 'pager'
+
+receivers:
+    - name: 'pager'
+      webhook_configs:
+      - url: http://rundeck:4440/api/40/webhook/lC2xobhqQ1OUgXyd3Cl1GrVKIrPpfon0#nginx
