@@ -28,7 +28,7 @@ Schedule: O agendamento deste job.
 Notifications: Envia uma notificação em cada situação do job, executado com sucesso, com falha, ao iniciar, ao terminar. Tem diversos plugins, integrando como por exemplo
 por email, slack e telegram.
 
-O rundeck ainda conta com uma ferramanta chamada "Comandos" que serve para executar comandos remotamente em qualquer nó em seu projeto e também a opção de disponibilizar determinado job ou log via webhook.
+O rundeck ainda conta com uma ferramenta chamada "Comandos" que serve para executar comandos remotamente em qualquer nó em seu projeto e também a opção de disponibilizar determinado job ou log via webhook.
 
 O propósito desse lab é exercitar algumas situações da vida real, onde teremos um servidor Rundeck orientado a webhooks e utilizando como fonte da verdade, um repositório git.
 
