@@ -4,4 +4,4 @@ route:
 receivers:
     - name: 'pager'
       webhook_configs:
-      - url: http://rundeck:4440/api/40/webhook/lC2xobhqQ1OUgXyd3Cl1GrVKIrPpfon0#nginx
+      - url: http://172.27.11.10:4440/api/40/webhook/OmczTsd1szUNEYWTzvvi3VGh5ZVvD1LJ#restart_minion
