@@ -4,7 +4,7 @@
   tasks:
 
   - name: Clone do repo
-    ansible.builtin.git:
+    git:
       repo: 'https://github.com/rmnobarra/rundeck.git'
       dest: /home/sysadmin/rundeck
       update: yes
