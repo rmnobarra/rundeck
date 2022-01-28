@@ -248,7 +248,9 @@ na máquina Rundeck, pode utilizar o terraform.tfvars.exemplo como exemplo.
 
 27. Execute o job.
 
-24. Para finalizar o lab:
+28. O esperado é que o repositório tenha sido criado com sucesso.
+
+29. Para finalizar o lab:
 
 ```bash
 vagrant destroy -f
