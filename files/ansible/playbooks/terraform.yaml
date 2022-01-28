@@ -12,6 +12,6 @@
 
   - name: Deploy projeto terraform
     terraform:
-      project_path: /home/sysadmin/files/terraform/
+      project_path: /home/sysadmin/rundeck/files/terraform/
       state: present
       variables_file: /home/sysadmin/rundeck/files/terraform/terraform.tfvars
