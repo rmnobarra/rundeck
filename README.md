@@ -82,7 +82,7 @@ Neste momento temos esse repositório dentro do home do usuário sysadmin no ser
 
 7. Na opção Ansible Resource Model Source em "Add a New Node Source", configures os seguintes parâmetros:
 
-```
+```bash
 ansible inventory File path: /home/sysadmin/rundeck/files/ansible/inventory
 
 Ansible config file path: /home/sysadmin/rundeck/files/ansible
@@ -106,10 +106,12 @@ Ainda em configurações de projeto, vá em "editar configuração" > Default ex
 SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
 
 A partir daqui, o esperado é que exista 3 nós no projeto: Rundeck, Minion e Docker.
+```
 
 8. Crie uma nova tarefa chamada minion, em workflow, selecione Ansible Playbook Workflow Node Step e adicione
 o conteúdo:
 
+```bash
 Ansible base directory path: /home/sysadmin/rundeck/files/ansible
 
 Playbook: /home/sysadmin/rundeck/files/ansible/playbooks/minion.yaml
@@ -119,6 +121,7 @@ SSH User: sysadmin
 SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
 
 Na aba Nodes, coloque: name: 172.27.11.20. Clique em salvar.
+```
 
 9. Execute o playbook.
 
@@ -134,6 +137,7 @@ Agora, toda vez que fizermos POST para essa url, o job será executado.
 
 11. Vamos criar um nova tarefa chamada docker, em workflow, selecione Ansible Playbook Workflow Node Step e adicione o conteúdo:
 
+```bash
 Ansible base directory path: /home/sysadmin/rundeck/files/ansible
 
 Playbook: /home/sysadmin/rundeck/files/ansible/playbooks/docker.yaml
@@ -143,6 +147,7 @@ SSH User: sysadmin
 SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
 
 Na aba Nodes, coloque: name: 172.27.11.100. Clique em salvar.
+```
 
 12. Execute o playbook.
 
@@ -156,6 +161,7 @@ vagrant ssh docker -- -t 'sudo docker version && docker-compose version'
 
 13. Vamos criar um nova tarefa chamada observabilidade, em workflow, selecione Ansible Playbook Workflow Node Step e adicione o conteúdo:
 
+```bash
 Ansible base directory path: /home/sysadmin/rundeck/files/ansible
 
 Playbook: /home/sysadmin/rundeck/files/ansible/playbooks/observabilidade.yaml
@@ -165,6 +171,7 @@ SSH User: sysadmin
 SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
 
 Na aba Nodes, coloque: name: 172.27.11.100. Clique em salvar.
+```
 
 14. Execute o playbook.
 
@@ -233,6 +240,7 @@ Na aba do rundeck, marque "Auto refresh"
 
 25. Crie um job chamado terraform-github e em workflow, selecione Ansible Playbook Workflow Node Step e adicione o conteúdo:
 
+```bash
 Ansible base directory path: /home/sysadmin/rundeck/files/ansible
 
 Playbook: /home/sysadmin/rundeck/files/ansible/playbooks/terraform.yaml
@@ -242,6 +250,7 @@ SSH User: sysadmin
 SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
 
 Na aba Nodes, coloque: name: 172.27.11.10. Clique em salvar.
+```
 
 26. Crie o arquivo "terraform.tfvars" em /home/sysadmin/rundeck/files/terraform
 na máquina Rundeck, pode utilizar o terraform.tfvars.exemplo como exemplo.
