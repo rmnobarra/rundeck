@@ -241,10 +241,12 @@ SSH User: sysadmin
 
 SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
 
-Na aba Nodes, coloque: name: 172.27.11.100. Clique em salvar.
+Na aba Nodes, coloque: name: 172.27.11.10. Clique em salvar.
 
-terraform apply --auto-approve -var-file=terraform.tfvars
+26. Crie o arquivo "terraform.tfvars" em /home/sysadmin/rundeck/files/terraform
+na máquina Rundeck, pode utilizar o terraform.tfvars.exemplo como exemplo.
 
+27. Execute o job.
 
 24. Para finalizar o lab:
 
