@@ -231,7 +231,17 @@ Na aba do rundeck, marque "Auto refresh"
 
 23. Verifique se o serviço do nginx voltou a funcionar.
 
-25. Crie um job chamado terraform-github
+25. Crie um job chamado terraform-github e em workflow, selecione Ansible Playbook Workflow Node Step e adicione o conteúdo:
+
+Ansible base directory path: /home/sysadmin/rundeck/files/ansible
+
+Playbook: /home/sysadmin/rundeck/files/ansible/playbooks/terraform.yaml
+
+SSH User: sysadmin
+
+SSH Key File path: /home/sysadmin/rundeck/files/id_rsa
+
+Na aba Nodes, coloque: name: 172.27.11.100. Clique em salvar.
 
 terraform apply --auto-approve -var-file=terraform.tfvars
 
