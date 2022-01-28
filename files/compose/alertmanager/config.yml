@@ -4,4 +4,4 @@ route:
 receivers:
     - name: 'pager'
       webhook_configs:
-      - url: http://172.27.11.10:4440/api/40/webhook/Qxu1UF4Kb6vmeojMRSrbkxoFeV9ZQ3zq#restart_minion
+      - url: http://172.27.11.10:4440/api/40/webhook/K2JzUNxueMPd1YXlgY9Qyqk4eVTALod1#restart_minion
