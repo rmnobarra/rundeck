@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y vim ansible openjdk-11-jdk gnupg2 curl git sqlite3
+apt-get install -y vim ansible openjdk-11-jdk gnupg2 curl git sqlite3 unzip
 
 # Rundeck
 
