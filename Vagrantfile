@@ -5,6 +5,7 @@ vms = {
   'rundeck' => {'memory' => '2048', 'cpus' => 2, 'ip' => '10', 'box' => 'debian/buster64', 'provision' => 'rundeck.sh'},
   'minion' => {'memory' => '1024', 'cpus' => 1, 'ip' => '20', 'box' => 'debian/buster64','provision' => 'minion.sh'},
   'docker' => {'memory' => '1024', 'cpus' => 1, 'ip' => '100', 'box' => 'debian/buster64', 'provision' => 'docker.sh'},
+  'centos' => {'memory' => '1024', 'cpus' => 1, 'ip' => '110', 'box' => 'centos/7', 'provision' => 'centos.sh'},
 }
 
 Vagrant.configure('2') do |config|

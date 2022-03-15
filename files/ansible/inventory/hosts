@@ -10,3 +10,5 @@ ansible_python_interpreter=python3
 [docker]
 172.27.11.100
 
+[centos]
+172.27.11.110

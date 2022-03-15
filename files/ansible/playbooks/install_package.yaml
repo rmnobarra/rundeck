@@ -1,0 +1,26 @@
+---
+- name: Upgrade RHEL & Debian
+  hosts: all
+  vars:
+  tasks:
+    # Upgrade RHEL family OS packages
+    - name: Upgrade RHEL Family OS packages
+      yum:
+        name: "{{ package_name }}"
+        state: latest
+      when: ansible_os_family == "RedHat"
+
+    # Debian Family upgrade
+    - name: Update repositories cache
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+    - name: Update all packages to their latest version
+      apt:
+        name: "{{ package_name }}"
+        state: latest
+      when: ansible_os_family == "Debian"
+    - name: Upgrade the OS (apt-get dist-upgrade)
+      apt:
+        upgrade: dist
+      when: ansible_os_family == "Debian"

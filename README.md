@@ -69,7 +69,7 @@ o conteúdo:
 ```bash
 #!/bin/bash
 
-sudo su - sysadmin -c 'git clone https://github.com/rmnobarra/rundeck.git || (cd /home/sysadmin/rundeck ; git pull)'
+    sudo su - sysadmin -c 'git clone https://github.com/rmnobarra/rundeck.git || (cd /home/sysadmin/rundeck ; git pull)'
 ```
 
 Em nodes, marque "Executar localmente"
