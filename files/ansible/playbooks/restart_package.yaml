@@ -1,0 +1,22 @@
+---
+- name: Upgrade RHEL & Debian
+  become: yes
+
+  hosts: all
+  vars:
+   - service_name: apache2
+  tasks:
+    # Restart RHEL family OS service
+    - name: Restart RHEL Family OS service
+      service:
+        name: '{{ service_name }}'
+        state: restarted
+      when: ansible_os_family == "RedHat"
+
+    # Restart Debian Family OS service
+
+    - name: Restart Debian Family service
+      service:
+        name: '{{ service_name }}'
+        state: restarted
+      when: ansible_os_family == "Debian"
