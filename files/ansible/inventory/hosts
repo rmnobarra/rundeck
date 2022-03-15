@@ -1,14 +1,23 @@
-[all:vars]
-ansible_python_interpreter=python3
-
 [rundeck]
 172.27.11.10
+
+[rundeck:vars]
+ansible_python_interpreter=python3
 
 [minion]
 172.27.11.20
 
+[minion:vars]
+ansible_python_interpreter=python3
+
 [docker]
 172.27.11.100
 
+[docker:vars]
+ansible_python_interpreter=python3
+
 [centos]
 172.27.11.110
+
+[centos:vars]
+ansible_python_interpreter=/usr/bin/python2

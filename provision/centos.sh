@@ -1,5 +1,5 @@
 #!/bin/bash
 
-apt-get update
+yum install python3 dnf -y
 
 echo "server `hostname` atualizado"

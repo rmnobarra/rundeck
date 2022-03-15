@@ -1,7 +1,9 @@
 ---
 - name: Upgrade RHEL & Debian
+  become: yes
+
   hosts: all
-  vars:
+
   tasks:
     # Upgrade RHEL family OS packages
     - name: Upgrade RHEL Family OS packages
